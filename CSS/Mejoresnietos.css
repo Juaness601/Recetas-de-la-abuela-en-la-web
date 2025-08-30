@@ -1,0 +1,264 @@
+body {
+    font-family: 'Georgia', serif;
+    background-color: #9eb9f6;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Encabezado */
+.header-container {
+    background-color: #f8e1c4;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 2px solid #d1a05e;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.header-title {
+    font-size: 32px;
+    color: #5c3317;
+    margin: 0;
+}
+
+.header-logo {
+    height: 60px;
+}
+
+.navbar {
+    background-color: #d1a05e;
+    padding: 10px 0;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.nav-list a:hover {
+    color: #5c3317;
+}
+
+.encabezado {
+    background-color: #d1c4e9;
+    text-align: center;
+    padding: 20px;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+/* Diseño principal */
+.contenedor-principal {
+    display: flex;
+    max-width: 1000px;
+    margin: 40px auto;
+    gap: 10px; /* Ajusta esto si quieres más o menos separación */
+    align-items: flex-start;
+    padding: 0 10px; /* Más estrecho para acercar */
+}
+
+.imagen-abuela {
+    width: 45%;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border: 4px solid #d1c4e9;
+    object-fit: cover;
+    margin-right: 0; /* Elimina el margen extra */
+}
+
+.seccion-nietos {
+    width: 50%;
+    background-color: #d1c4e9;
+    padding: 20px; /* Reduce para compactar más */
+    border-radius: 20px;
+    box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.5);
+    margin-left: 0; /* Elimina el espacio innecesario */
+}
+
+.nietos-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+.nietos-list-wrapper {
+    animation: scrollUp 12s linear infinite;
+    display: flex;
+    flex-direction: column;
+}
+
+.nietos-list li {
+    font-size: 1.5rem;
+    padding: 15px 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    height: 100px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.numero {
+    font-weight: bold;
+    font-size: 2rem;
+    min-width: 30px;
+    text-align: right;
+}
+
+.avatar {
+    font-size: 2rem;
+}
+
+.nombre {
+    flex: 1;
+    text-align: left;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+@keyframes scrollUp {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-300px);
+    }
+}
+
+/* Tablets */
+@media screen and (max-width: 1024px) {
+    .contenedor-principal {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        margin: 30px auto;
+    }
+
+    .imagen-abuela,
+    .seccion-nietos {
+        width: 90%;
+    }
+
+    .encabezado h1 {
+        font-size: 2rem;
+    }
+
+    .nietos-list li {
+        font-size: 1.4rem;
+        height: 90px;
+    }
+
+    .numero, .avatar {
+        font-size: 1.8rem;
+    }
+
+    .nombre {
+        font-size: 1.4rem;
+    }
+}
+
+/* Móviles */
+@media screen and (max-width: 767px) {
+    .encabezado {
+        padding: 15px 20px;
+    }
+
+    .contenedor-principal {
+        margin: 20px auto;
+        gap: 15px;
+        padding: 0 15px;
+    }
+
+    .imagen-abuela,
+    .seccion-nietos {
+        width: 100%;
+    }
+
+    .seccion-nietos {
+        padding: 20px;
+    }
+
+    .nietos-list {
+        height: 250px;
+    }
+
+    .nietos-list li {
+        flex-direction: row;
+        align-items: center;
+        height: auto;
+        padding: 12px 10px;
+        font-size: 1.2rem;
+    }
+
+    .numero, .avatar {
+        font-size: 1.5rem;
+    }
+
+    .nombre {
+        font-size: 1.2rem;
+    }
+
+    @keyframes scrollUp {
+        0% {
+            transform: translateY(0);
+        }
+        100% {
+            transform: translateY(-250px);
+        }
+    }
+}
+
+/* Pantallas muy pequeñas */
+@media screen and (max-width: 480px) {
+    .encabezado h1 {
+        font-size: 1.5rem;
+    }
+
+    .nietos-list li {
+        gap: 10px;
+        font-size: 1rem;
+    }
+
+    .numero, .avatar {
+        font-size: 1.3rem;
+    }
+
+    .nombre {
+        font-size: 1rem;
+    }
+
+    .nietos-list {
+        height: 200px;
+    }
+
+    @keyframes scrollUp {
+        0% {
+            transform: translateY(0);
+        }
+        100% {
+            transform: translateY(-200px);
+        }
+    }
+}
